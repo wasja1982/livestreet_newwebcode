@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 <div class="webcode">
-	<h1>{$aLang.webcode_admin_menu}</h1>
+	<h1>{$aLang.plugin.webcode.webcode_admin_menu}</h1>
 	<form action="{router page='webcode'}" method="post">
 		<p>
 			<label for="html_head_end">{$aLang.plugin.webcode.html_head_end}</label>
