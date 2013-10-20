@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+        <name>
+                <lang name="default">webcode</lang>
+                <lang name="russian">webcode</lang>
+        </name>
+        <author>
+                <lang name="default">Artem Soshnikov</lang>
+                <lang name="russian">Артем Сошников</lang>
+        </author>
+        <homepage>http://svoyastranica.ru</homepage>
+        <version>0.1</version>
+        <requires>
+                <livestreet>0.5.0</livestreet>
+                <plugins>
+
+                </plugins>
+        </requires>
+        <description>
+                <lang name="default">Easy way to add counters (analitics) codes</lang>
+                <lang name="russian">Легкий способ добавлять коды счетчиков</lang>
+        </description>
+        <delegate>
+                <module></module>
+                <action></action>
+                <template></template>
+                <entity></entity>
+        </delegate>
+</plugin>
