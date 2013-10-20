@@ -1,6 +1,6 @@
 <?php
 
-class PluginWebcode_ModuleWebcode extends Module {
+class PluginNewwebcode_ModuleWebcode extends Module {
 
 	public function Init(){
 		$this->oMapper = Engine::GetMapper ( __CLASS__ );

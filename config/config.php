@@ -4,6 +4,6 @@ $config = array();
 $config['dropuninstall'] = true; 
 
 $config['table'] = '___db.table.prefix___webcode';
-Config::Set('router.page.webcode', 'PluginWebcode_ActionWebcode');
+Config::Set('router.page.webcode', 'PluginNewwebcode_ActionWebcode');
 
 return $config;

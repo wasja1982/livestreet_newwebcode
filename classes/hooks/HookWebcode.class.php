@@ -1,5 +1,5 @@
 <?php
-class PluginWebcode_HookWebcode extends Hook {
+class PluginNewwebcode_HookWebcode extends Hook {
 	public function RegisterHook() {	
 		$this->AddHook('template_html_head_end','html_head_end');
 		$this->AddHook('template_body_begin','body_begin');
@@ -8,15 +8,15 @@ class PluginWebcode_HookWebcode extends Hook {
 	}
 	
 	public function html_head_end(){
-		return $this->PluginWebcode_Webcode_Code("html_head_end");
+		return $this->PluginNewwebcode_Webcode_Code("html_head_end");
 	}
 	
 	public function body_begin(){
-		return $this->PluginWebcode_Webcode_Code("body_begin");
+		return $this->PluginNewwebcode_Webcode_Code("body_begin");
 	}
 	
 	public function body_end(){
-		return $this->PluginWebcode_Webcode_Code("body_end");
+		return $this->PluginNewwebcode_Webcode_Code("body_end");
 	}
 	
 	public function menu_admin(){

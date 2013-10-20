@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
         <name>
-                <lang name="default">webcode</lang>
-                <lang name="russian">webcode</lang>
+                <lang name="default">New Webcode</lang>
         </name>
         <author>
-                <lang name="default">Artem Soshnikov</lang>
-                <lang name="russian">Артем Сошников</lang>
+                <lang name="default">Artem Soshnikov, Alexandr Verenik</lang>
+                <lang name="russian">Артем Сошников, Александр Вереник</lang>
         </author>
-        <homepage>http://svoyastranica.ru</homepage>
-        <version>0.1</version>
+        <homepage>https://github.com/wasja1982/livestreet_newwebcode</homepage>
+        <version>1.0.0</version>
         <requires>
-                <livestreet>0.5.0</livestreet>
+                <livestreet>1.0.3</livestreet>
                 <plugins>
 
                 </plugins>
         </requires>
         <description>
-                <lang name="default">Easy way to add counters (analitics) codes</lang>
-                <lang name="russian">Легкий способ добавлять коды счетчиков</lang>
+                <lang name="default">Easy way to add counters (Google Analitics, etc.) codes</lang>
+                <lang name="russian">Простое добавление счетчиков (Яндекс.Метрика, Google Analytics и др.) без редактирования шаблонов</lang>
         </description>
         <delegate>
                 <module></module>
