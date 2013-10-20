@@ -7,8 +7,12 @@ class PluginWebcode_ActionWebcode extends ActionPlugin{
 		$oUserCurrent = $this->User_GetUserCurrent();
 		if (!isset($oUserCurrent) || !$oUserCurrent->isAdministrator())
 			Router::Action('error');
-		else
+		else {
+			$this->Viewer_Assign('html_head_end',$this->PluginWebcode_Webcode_Code("html_head_end"));
+			$this->Viewer_Assign('body_begin',$this->PluginWebcode_Webcode_Code("body_begin"));
+			$this->Viewer_Assign('body_end',$this->PluginWebcode_Webcode_Code("body_end"));
 			$this->setDefaultEvent('default');
+		}
 	}
 
 	public function RegisterEvent(){
