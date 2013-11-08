@@ -26,4 +26,5 @@
 		<input type="hidden" name="webcode" value="1"/>
 	</form>
 </div>
+<div>Плагин использует хранилище <a href="http://livestreetcms.com/addons/view/380/">ConfigEngine</a> от <a href="http://psnet.lookformp3.net/">PSNet</a>.</div>
 {include file="footer.tpl"}
