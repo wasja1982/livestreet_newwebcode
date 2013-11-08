@@ -1,7 +1,7 @@
 <?php
 
 class PluginNewwebcode_ActionWebcode extends ActionPlugin{
-	public $sMenuItemSelect = 'new_webcode';
+	protected $sMenuHeadItemSelect = 'webcode';
 	protected $sCurrentEvent;
 	public function Init(){
 		$oUserCurrent = $this->User_GetUserCurrent();
@@ -22,5 +22,8 @@ class PluginNewwebcode_ActionWebcode extends ActionPlugin{
 	public function EventDefault(){
 		if(isset($_POST['webcode']))
 			$this->PluginNewwebcode_Webcode_Submit();
+	}
+	public function EventShutdown() {
+		$this->Viewer_Assign('sMenuHeadItemSelect',$this->sMenuHeadItemSelect);
 	}
 }

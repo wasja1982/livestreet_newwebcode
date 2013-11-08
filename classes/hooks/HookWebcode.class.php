@@ -4,7 +4,7 @@ class PluginNewwebcode_HookWebcode extends Hook {
 		$this->AddHook('template_html_head_end','html_head_end');
 		$this->AddHook('template_body_begin','body_begin');
 		$this->AddHook('template_body_end','body_end');
-		$this->AddHook('template_menu_admin','menu_admin');
+		$this->AddHook('template_main_menu_item','menu_admin');
 	}
 	
 	public function html_head_end(){
