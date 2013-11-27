@@ -24,9 +24,14 @@ class PluginNewwebcode extends Plugin {
 
     public function Deactivate() {
         if (Config::Get ('plugin.newwebcode.dropuninstall') == true) {
-            CE::DeleteMyData($this, 'html_head_end');
-            CE::DeleteMyData($this, 'body_begin');
-            CE::DeleteMyData($this, 'body_end');
+            $aHooks = Config::Get('plugin.newwebcode.hooks');
+            if ($aHooks && is_array($aHooks)) {
+                foreach ($aHooks as $sHook) {
+                    if ($sHook) {
+                        CE::DeleteMyData($this, $sHook);
+                    }
+                }
+            }
         }
         return true;
     }
