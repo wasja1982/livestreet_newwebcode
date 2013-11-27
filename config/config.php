@@ -16,10 +16,17 @@
 $config = array();
 
 // Очищать данные при деактивации
-$config['dropuninstall'] = true; 
+$config['dropuninstall'] = true;
 
 // Показывать пункт меню
 $config['show_menu'] = true;
+
+// Список хуков (допустимы только шаблонные)
+$config['hooks'] = array(
+    'html_head_end',
+    'body_begin',
+    'body_end',
+);
 
 Config::Set('router.page.webcode', 'PluginNewwebcode_ActionWebcode');
 

@@ -14,26 +14,34 @@
  **/
 
 class PluginNewwebcode_HookWebcode extends Hook {
-	public function RegisterHook() {	
-		$this->AddHook('template_html_head_end','html_head_end');
-		$this->AddHook('template_body_begin','body_begin');
-		$this->AddHook('template_body_end','body_end');
-		$this->AddHook('template_main_menu_item','menu_admin');
-	}
-	
-	public function html_head_end(){
-		return $this->PluginNewwebcode_Webcode_Code("html_head_end");
-	}
-	
-	public function body_begin(){
-		return $this->PluginNewwebcode_Webcode_Code("body_begin");
-	}
-	
-	public function body_end(){
-		return $this->PluginNewwebcode_Webcode_Code("body_end");
-	}
-	
-	public function menu_admin(){
-		return $this->Viewer_Fetch(Plugin::GetTemplatePath(__CLASS__).'menu_admin.tpl');
-	}
+    public function RegisterHook() {
+        $aHooks = Config::Get('plugin.newwebcode.hooks');
+        if ($aHooks && is_array($aHooks)) {
+            foreach ($aHooks as $sHook) {
+                if ($sHook) {
+                    $this->AddHook('template_' . $sHook, $sHook);
+                }
+            }
+        }
+        $this->AddHook('template_main_menu_item','menu_admin');
+    }
+
+    public function menu_admin(){
+        return $this->Viewer_Fetch(Plugin::GetTemplatePath(__CLASS__).'menu_admin.tpl');
+    }
+
+    public function __call($name, $arguments) {
+        try {
+            $aHooks = Config::Get('plugin.newwebcode.hooks');
+            if (in_array($name, $aHooks)) {
+                $oCode = new PluginNewwebcode_ModuleWebcode_EntityCode(array('name' => $name));
+                return $oCode->getCode();
+            } else {
+                return parent::__call($name, $arguments);
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+        }
+        return;
+    }
 }
