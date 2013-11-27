@@ -26,7 +26,7 @@ class PluginNewwebcode extends Plugin {
         if (Config::Get ('plugin.newwebcode.dropuninstall') == true) {
             $aHooks = Config::Get('plugin.newwebcode.hooks');
             if ($aHooks && is_array($aHooks)) {
-                foreach ($aHooks as $sHook) {
+                foreach (array_unique($aHooks) as $sHook) {
                     if ($sHook) {
                         CE::DeleteMyData($this, $sHook);
                     }

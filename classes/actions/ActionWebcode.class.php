@@ -24,7 +24,7 @@ class PluginNewwebcode_ActionWebcode extends ActionPlugin {
             $aEntities = array();
             $aHooks = Config::Get('plugin.newwebcode.hooks');
             if ($aHooks && is_array($aHooks)) {
-                foreach ($aHooks as $sHook) {
+                foreach (array_unique($aHooks) as $sHook) {
                     if ($sHook) {
                         $aEntities[] = new PluginNewwebcode_ModuleWebcode_EntityCode(array('name' => $sHook));
                     }

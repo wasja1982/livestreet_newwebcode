@@ -17,7 +17,7 @@ class PluginNewwebcode_HookWebcode extends Hook {
     public function RegisterHook() {
         $aHooks = Config::Get('plugin.newwebcode.hooks');
         if ($aHooks && is_array($aHooks)) {
-            foreach ($aHooks as $sHook) {
+            foreach (array_unique($aHooks) as $sHook) {
                 if ($sHook) {
                     $this->AddHook('template_' . $sHook, $sHook);
                 }
